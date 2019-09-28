@@ -1,4 +1,5 @@
 ## feathers-hooks-validate-joi
+
 Feathers hook utility for schema validation and sanitization using Joi.
 Joi error messages are converted to web/mobile friendly formats,
 and optionally translated for clarity or internationalization.
@@ -12,9 +13,17 @@ and optionally translated for clarity or internationalization.
 const Joi = require('joi');
 const validate = require('feathers-hooks-validate-joi');
 
-const name = Joi.string().trim().min(5).max(30)
-  .regex(/^[\sa-zA-Z0-9]$/, 'letters, numbers and spaces').required();
-const password = Joi.string().trim().min(2).max(30).required();
+const name = Joi.string()
+  .trim()
+  .min(5)
+  .max(30)
+  .regex(/^[\sa-zA-Z0-9]$/, 'letters, numbers and spaces')
+  .required();
+const password = Joi.string()
+  .trim()
+  .min(2)
+  .max(30)
+  .required();
 const schema = Joi.object().keys({
   name: name,
   password,
@@ -23,7 +32,7 @@ const schema = Joi.object().keys({
 const joiOptions = { convert: true, abortEarly: false };
 ```
 
-(1) Validate sanitize data. The client receives any errors in a 
+(1) Validate sanitize data. The client receives any errors in a
 [format suitable for forms](https://github.com/eddyystop/joi-errors-for-forms#code-examples)
 which also seems to be
 [recommend by Feathers](http://docs.feathersjs.com/middleware/error-handling.html#featherserror-api).
@@ -37,8 +46,8 @@ export.before = {
 
 ```
 
-(2) Errors are returned in a 
-    [Mongoose format.](https://github.com/eddyystop/joi-errors-for-forms#code-examples)
+(2) Errors are returned in a
+[Mongoose format.](https://github.com/eddyystop/joi-errors-for-forms#code-examples)
 
 ```javascript
 export.before = {
@@ -71,7 +80,7 @@ export.before = {
 ```
 
 Note: Data values in the `$set` operator are not validated.
-You could use `joi-errors-for-forms` for that. 
+You could use `joi-errors-for-forms` for that.
 
 ## Motivation
 
@@ -110,13 +119,16 @@ in bulk.
 You can then internationalize your field names and regex descriptions in the schema, e.g.
 
 ```javascript
-Joi.string().regex(/^[\sa-zA-Z0-9]$/, i18n('letters, number and spaces')).label(i18n('Confirm password'))
+Joi.string()
+  .regex(/^[\sa-zA-Z0-9]$/, i18n('letters, number and spaces'))
+  .label(i18n('Confirm password'));
 ```
 
 These are suitable methods to internationalize the majority of Joi error messages.
 
 ## Contributors
 
+- [asamolion](http://github.com/asamolion)
 - [eddyystop](https://github.com/eddyystop)
 
 ## License

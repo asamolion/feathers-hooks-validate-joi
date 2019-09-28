@@ -20,10 +20,10 @@
     "validation",
     "joi"
   ],
-  "author": "John Szwaronek <johnsz9999@gmail.com>",
+  "author": "Muhammad Osama Arshad <muhammadosamaarshad@gmail.com>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/eddyystop/feathers-hooks-validate-joi/issues"
+    "url": "https://github.com/asamolion/feathers-hooks-validate-joi/issues"
   },
   "homepage": "https://github.com/eddyystop/feathers-hooks-validate-joi#readme",
   "dependencies": {
