@@ -5,8 +5,7 @@
   "main": "index.js",
   "scripts": {
     "lint": "eslint --ext .js,.jsx .",
-    "test": "mocha --reporter spec",
-    "cover": "node_modules/istanbul/lib/cli.js cover node_modules/mocha/bin/_mocha -- -R spec test/*"
+    "test": "mocha --reporter spec"
   },
   "repository": {
     "type": "git",
@@ -36,16 +35,16 @@
   "devDependencies": {
     "babel-eslint": "^8.2.1",
     "chai": "3.5.0",
-    "coveralls": "2.11.9",
-    "eslint": "3.0.1",
-    "eslint-config-airbnb": "9.0.1",
-    "eslint-plugin-import": "1.10.2",
-    "eslint-plugin-jsx-a11y": "1.5.5",
-    "eslint-plugin-react": "5.2.2",
-    "istanbul": "0.4.4",
-    "mocha": "2.5.3"
+    "coveralls": "^3.0.6",
+    "eslint": "^6.1.0",
+    "eslint-config-airbnb": "^18.0.1",
+    "eslint-plugin-import": "^2.18.2",
+    "eslint-plugin-jsx-a11y": "^6.2.3",
+    "eslint-plugin-react": "^7.14.3",
+    "eslint-plugin-react-hooks": "^1.7.0",
+    "mocha": "^6.2.0"
   },
   "engines": {
-    "node": ">4.2.4"
+    "node": ">8.x.x"
   }
 }
